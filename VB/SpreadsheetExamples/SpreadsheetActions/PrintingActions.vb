@@ -1,5 +1,4 @@
-﻿Imports Microsoft.VisualBasic
-Imports System
+﻿Imports System
 Imports System.Drawing
 #Region "#printingUsings"
 Imports DevExpress.Spreadsheet
@@ -7,13 +6,15 @@ Imports DevExpress.XtraPrinting
 #End Region ' #printingUsings
 
 Namespace SpreadsheetExamples
-	Public NotInheritable Class PrintingActions
+    Public NotInheritable Class PrintingActions
+
+        Private Sub New()
+        End Sub
+
 
         Public Shared PrintAction As Action(Of Workbook) = AddressOf Print
 
-		Private Sub New()
-		End Sub
-        Shared Sub Print(ByVal workbook As Workbook)
+        Private Shared Sub Print(ByVal workbook As Workbook)
 
             Dim worksheet As Worksheet = workbook.Worksheets(0)
 
@@ -42,7 +43,7 @@ Namespace SpreadsheetExamples
             rangeFormatting.Fill.BackgroundColor = Color.LightBlue
             tableRange.EndUpdateFormatting(rangeFormatting)
 
-            '			#Region "#WorksheetPrintOptions"
+'            #Region "#WorksheetPrintOptions"
             worksheet.ActiveView.Orientation = PageOrientation.Landscape
             '  Display row and column headings.
             worksheet.ActiveView.ShowHeadings = True
@@ -57,9 +58,9 @@ Namespace SpreadsheetExamples
             printOptions.FitToPage = True
             '  Print a dash instead of a cell error message.
             printOptions.ErrorsPrintMode = ErrorsPrintMode.Dash
-            '			#End Region ' #WorksheetPrintOptions
+'            #End Region ' #WorksheetPrintOptions
 
-            '			#Region "#PrintWorkbook"
+'            #Region "#PrintWorkbook"
             ' Invoke the Print Preview dialog for the workbook.
             Using printingSystem As New PrintingSystem()
                 Using link As New PrintableComponentLink(printingSystem)
@@ -68,7 +69,7 @@ Namespace SpreadsheetExamples
                     link.PrintingSystem.PreviewFormEx.ShowDialog()
                 End Using
             End Using
-            '			#End Region ' #PrintWorkbook
+'            #End Region ' #PrintWorkbook
         End Sub
-	End Class
+    End Class
 End Namespace
