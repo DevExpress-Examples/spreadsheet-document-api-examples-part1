@@ -71,7 +71,7 @@ Namespace SpreadsheetExamples
         Private Shared Sub UseNamesInFormulas(ByVal workbook As Workbook)
             Dim worksheet As Worksheet = workbook.Worksheets(0)
 
-            Dim dataRangeHeader As Range = worksheet.Range("A1:C1")
+            Dim dataRangeHeader As CellRange = worksheet.Range("A1:C1")
             worksheet.MergeCells(dataRangeHeader)
             dataRangeHeader.Value = "myRange:"
             dataRangeHeader.Alignment.Horizontal = SpreadsheetHorizontalAlignment.Center
@@ -81,7 +81,7 @@ Namespace SpreadsheetExamples
             worksheet.Range("A2:C5").Alignment.Horizontal = SpreadsheetHorizontalAlignment.Center
             worksheet.Range("A2:C5").Borders.SetOutsideBorders(Color.LightBlue, BorderLineStyle.Medium)
 
-            Dim sumHeader As Range = worksheet.Range("E1:F1")
+            Dim sumHeader As CellRange = worksheet.Range("E1:F1")
             worksheet.MergeCells(sumHeader)
             sumHeader.Value = "Sum:"
             sumHeader.Alignment.Horizontal = SpreadsheetHorizontalAlignment.Center
@@ -92,9 +92,9 @@ Namespace SpreadsheetExamples
             worksheet.Cells("E3").Value = "Value:"
             worksheet.Cells("F2").Value = "'= SUM(myRange)"
 
-'            #Region "#NamesInFormulas"
+            '            #Region "#NamesInFormulas"
             ' Access the "A2:C5" range of cells in the worksheet.
-            Dim range As Range = worksheet.Range("A2:C5")
+            Dim range As CellRange = worksheet.Range("A2:C5")
 
             ' Specify the name for the created range.
             range.Name = "myRange"

@@ -13,13 +13,13 @@ namespace SpreadsheetExamples {
         static void Print(Workbook workbook) {
 
             Worksheet worksheet = workbook.Worksheets[0];
- 
+
             // Generate worksheet content - the simple multiplication table.
-            Range topHeader = worksheet.Range.FromLTRB(1, 0, 20, 0);
+            CellRange topHeader = worksheet.Range.FromLTRB(1, 0, 20, 0);
             topHeader.Formula = "=COLUMN() - 1";
-            Range leftCaption = worksheet.Range.FromLTRB(0, 1, 0, 20);
+            CellRange leftCaption = worksheet.Range.FromLTRB(0, 1, 0, 20);
             leftCaption.Formula = "=ROW() - 1";
-            Range tableRange = worksheet.Range.FromLTRB(1, 1, 20, 20);
+            CellRange tableRange = worksheet.Range.FromLTRB(1, 1, 20, 20);
             tableRange.Formula = "=(ROW()-1)*(COLUMN()-1)";
 
             

@@ -123,7 +123,7 @@ namespace SpreadsheetExamples {
 
             #region #RangeFormatting
             // Access the range of cells to be formatted.
-            Range range = worksheet.Range["C3:E6"];
+            CellRange range = worksheet.Range["C3:E6"];
 
             // Begin updating of the range formatting. 
             Formatting rangeFormatting = range.BeginUpdateFormatting();
@@ -230,7 +230,7 @@ namespace SpreadsheetExamples {
             worksheet.Cells["A1"].FillColor = Color.Yellow;
 
             // Format a range of cells.
-            Range range = worksheet.Range["C3:D4"];
+            CellRange range = worksheet.Range["C3:D4"];
             Formatting rangeFormatting = range.BeginUpdateFormatting();
             rangeFormatting.Font.Color = Color.Blue;
             rangeFormatting.Fill.BackgroundColor = Color.LightBlue;
@@ -267,7 +267,7 @@ namespace SpreadsheetExamples {
 
             Worksheet worksheet = workbook.Worksheets[0];
 
-            Range range = worksheet.Range["A1:B3"];
+            CellRange range = worksheet.Range["A1:B3"];
             range.ColumnWidthInCharacters = 30;
             range.RowHeight = 200;
 
@@ -333,16 +333,16 @@ namespace SpreadsheetExamples {
 
             #region #CellRangeBorders
             // Set all borders for the range of cells in one step.
-            Range range1 = worksheet.Range["B8:F13"];
+            CellRange range1 = worksheet.Range["B8:F13"];
             range1.Borders.SetAllBorders(Color.Green, BorderLineStyle.Double);
 
             // Set all inside and outside borders separately for the range of cells.
-            Range range2 = worksheet.Range["C15:F18"];
+            CellRange range2 = worksheet.Range["C15:F18"];
             range2.SetInsideBorders(Color.SkyBlue, BorderLineStyle.MediumDashed);
             range2.Borders.SetOutsideBorders(Color.DeepSkyBlue, BorderLineStyle.Medium);
 
             // Set all horizontal and vertical borders separately for the range of cells.
-            Range range3 = worksheet.Range["D21:F23"];
+            CellRange range3 = worksheet.Range["D21:F23"];
             Formatting range3Formatting = range3.BeginUpdateFormatting();
             Borders range3Borders = range3Formatting.Borders;
             range3Borders.InsideHorizontalBorders.LineStyle = BorderLineStyle.MediumDashDot;
@@ -352,7 +352,7 @@ namespace SpreadsheetExamples {
             range3.EndUpdateFormatting(range3Formatting);
 
             // Set each particular border for the range of cell. 
-            Range range4 = worksheet.Range["E25:F26"];
+            CellRange range4 = worksheet.Range["E25:F26"];
             Formatting range4Formatting = range4.BeginUpdateFormatting();
             Borders range4Borders = range4Formatting.Borders;
             range4Borders.SetOutsideBorders(Color.Black, BorderLineStyle.Thick);

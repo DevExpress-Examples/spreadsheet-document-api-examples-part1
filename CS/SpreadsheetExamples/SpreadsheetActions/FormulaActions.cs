@@ -67,7 +67,7 @@ namespace SpreadsheetExamples {
         static void UseNamesInFormulas(Workbook workbook) {
             Worksheet worksheet = workbook.Worksheets[0];
 
-            Range dataRangeHeader = worksheet.Range["A1:C1"];
+            CellRange dataRangeHeader = worksheet.Range["A1:C1"];
             worksheet.MergeCells(dataRangeHeader);
             dataRangeHeader.Value = "myRange:";
             dataRangeHeader.Alignment.Horizontal = SpreadsheetHorizontalAlignment.Center;
@@ -77,7 +77,7 @@ namespace SpreadsheetExamples {
             worksheet.Range["A2:C5"].Alignment.Horizontal = SpreadsheetHorizontalAlignment.Center;
             worksheet.Range["A2:C5"].Borders.SetOutsideBorders(Color.LightBlue, BorderLineStyle.Medium);
 
-            Range sumHeader = worksheet.Range["E1:F1"];
+            CellRange sumHeader = worksheet.Range["E1:F1"];
             worksheet.MergeCells(sumHeader);
             sumHeader.Value = "Sum:";
             sumHeader.Alignment.Horizontal = SpreadsheetHorizontalAlignment.Center;
@@ -90,7 +90,7 @@ namespace SpreadsheetExamples {
 
             #region #NamesInFormulas
             // Access the "A2:C5" range of cells in the worksheet.
-            Range range = worksheet.Range["A2:C5"];
+            CellRange range = worksheet.Range["A2:C5"];
 
             // Specify the name for the created range.
             range.Name = "myRange";

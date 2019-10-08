@@ -100,15 +100,15 @@ Namespace SpreadsheetExamples
             Dim worksheet As Worksheet = workbook.Worksheets(0)
 
             ' Create a range.
-            Dim rangeB3D6 As Range = worksheet.Range("B3:D6")
+            Dim rangeB3D6 As CellRange = worksheet.Range("B3:D6")
             ' Specify the name for the created range.
             rangeB3D6.Name = "rangeB3D6"
 
             ' Create a new defined name with the specifed range name and absolute reference.
             Dim definedName As DefinedName = worksheet.DefinedNames.Add("rangeB17D20", "Sheet1!$B$17:$D$20")
             ' Create a range using the specified defined name.
-            Dim B17D20 As Range = worksheet.Range(definedName.Name)
-'            #End Region ' #NamedRange
+            Dim B17D20 As CellRange = worksheet.Range(definedName.Name)
+            '            #End Region ' #NamedRange
         End Sub
 
         Private Shared Sub AddHyperlink(ByVal workbook As Workbook)
@@ -122,7 +122,7 @@ Namespace SpreadsheetExamples
             worksheet.Hyperlinks.Add(cell, "http://www.devexpress.com/", True, "DevExpress")
 
             ' Create a hyperlink to a cell range in a workbook.
-            Dim range As Range = worksheet.Range("C3:D4")
+            Dim range As CellRange = worksheet.Range("C3:D4")
             Dim cellHyperlink As Hyperlink = worksheet.Hyperlinks.Add(range, "Sheet2!B2:E7", False, "Select Range")
             cellHyperlink.TooltipText = "Click Me"
 '            #End Region ' #AddHyperlink
@@ -208,7 +208,7 @@ Namespace SpreadsheetExamples
             worksheet("A6").Value = "Clear Cell Comments Only:"
 
             ' Specify initial content and formatting for cells.
-            Dim sourceCells As Range = worksheet("B2:D6")
+            Dim sourceCells As CellRange = worksheet("B2:D6")
             sourceCells.Value = Date.Now
             sourceCells.Style = workbook.Styles(BuiltInStyleId.Accent3_40percent)
             sourceCells.Font.Color = Color.LightSeaGreen

@@ -97,14 +97,14 @@ namespace SpreadsheetExamples {
             Worksheet worksheet = workbook.Worksheets[0];
 
             // Create a range.
-            Range rangeB3D6 = worksheet.Range["B3:D6"];
+            CellRange rangeB3D6 = worksheet.Range["B3:D6"];
             // Specify the name for the created range.
             rangeB3D6.Name = "rangeB3D6";
 
             // Create a new defined name with the specifed range name and absolute reference.
             DefinedName definedName = worksheet.DefinedNames.Add("rangeB17D20", "Sheet1!$B$17:$D$20");
             // Create a range using the specified defined name.
-            Range B17D20 = worksheet.Range[definedName.Name];
+            CellRange B17D20 = worksheet.Range[definedName.Name];
             #endregion #NamedRange
         }
 
@@ -119,7 +119,7 @@ namespace SpreadsheetExamples {
             worksheet.Hyperlinks.Add(cell, "http://www.devexpress.com/", true, "DevExpress");
 
             // Create a hyperlink to a cell range in a workbook.
-            Range range = worksheet.Range["C3:D4"];
+            CellRange range = worksheet.Range["C3:D4"];
             Hyperlink cellHyperlink = worksheet.Hyperlinks.Add(range, "Sheet2!B2:E7", false, "Select Range");
             cellHyperlink.TooltipText = "Click Me";
             #endregion #AddHyperlink
@@ -205,7 +205,7 @@ namespace SpreadsheetExamples {
             worksheet["A6"].Value = "Clear Cell Comments Only:";
 
             // Specify initial content and formatting for cells.
-            Range sourceCells = worksheet["B2:D6"];
+            CellRange sourceCells = worksheet["B2:D6"];
             sourceCells.Value = DateTime.Now;
             sourceCells.Style = workbook.Styles[BuiltInStyleId.Accent3_40percent];
             sourceCells.Font.Color = Color.LightSeaGreen;

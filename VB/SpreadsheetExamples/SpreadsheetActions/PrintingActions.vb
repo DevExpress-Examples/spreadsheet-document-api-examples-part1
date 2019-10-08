@@ -19,11 +19,11 @@ Namespace SpreadsheetExamples
             Dim worksheet As Worksheet = workbook.Worksheets(0)
 
             ' Generate worksheet content - the simple multiplication table.
-            Dim topHeader As Range = worksheet.Range.FromLTRB(1, 0, 20, 0)
+            Dim topHeader As CellRange = worksheet.Range.FromLTRB(1, 0, 20, 0)
             topHeader.Formula = "=COLUMN() - 1"
-            Dim leftCaption As Range = worksheet.Range.FromLTRB(0, 1, 0, 20)
+            Dim leftCaption As CellRange = worksheet.Range.FromLTRB(0, 1, 0, 20)
             leftCaption.Formula = "=ROW() - 1"
-            Dim tableRange As Range = worksheet.Range.FromLTRB(1, 1, 20, 20)
+            Dim tableRange As CellRange = worksheet.Range.FromLTRB(1, 1, 20, 20)
             tableRange.Formula = "=(ROW()-1)*(COLUMN()-1)"
 
 

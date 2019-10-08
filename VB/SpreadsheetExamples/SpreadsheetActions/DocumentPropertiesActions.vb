@@ -17,7 +17,7 @@ Namespace SpreadsheetExamples
                 worksheet.Columns(0).WidthInCharacters = 2
                 worksheet("E6").Value = "Mike Hamilton"
 
-                Dim header As Range = worksheet.Range("B2:C2")
+                Dim header As CellRange = worksheet.Range("B2:C2")
                 header(0).Value = "Property Name"
                 header(1).Value = "Value"
                 header.Style = workbook.Styles(BuiltInStyleId.Accent2)
@@ -52,7 +52,7 @@ Namespace SpreadsheetExamples
                 Dim worksheet As Worksheet = workbook.Worksheets(0)
                 worksheet.Columns(0).WidthInCharacters = 2
 
-                Dim header As Range = worksheet.Range("B2:C2")
+                Dim header As CellRange = worksheet.Range("B2:C2")
                 header(0).Value = "Property Name"
                 header(1).Value = "Value"
                 header.Style = workbook.Styles(BuiltInStyleId.Accent2)
