@@ -27,5 +27,6 @@
 <p>For more information, review the <a href="https://documentation.devexpress.com/OfficeFileAPI/12074/Spreadsheet-Document-API/Examples"><u>Examples</u></a> section in the documentation.<br><br>The<strong> Universal Subscription</strong> or an additional <strong>Office File API Subscription</strong> is required to use this example in production code. Please refer to the <a href="https://www.devexpress.com/Buy/NET/">DevExpress Subscription</a> page for pricing information.</p>
 
 <br/>
-
-
+See also:
+<br/>
+<a href="https://github.com/DevExpress-Examples/spreadsheet-document-api-examples-part-2-t217615">Spreadsheet Document API - Part 2</a>
