@@ -30,5 +30,5 @@
 See also:
 <br/>
 <a href="https://github.com/DevExpress-Examples/spreadsheet-document-api-examples-part-2-t217615">Spreadsheet Document API - Part 2</a>
-
+<br/>
 <a href="https://github.com/DevExpress-Examples/spreadsheet-document-api-part-3">Spreadsheet Document API - Part 3</a>
