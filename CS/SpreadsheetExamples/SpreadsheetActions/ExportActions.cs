@@ -19,6 +19,7 @@ namespace SpreadsheetExamples
             workbook.Worksheets[0].Cells["D8"].Value = "This document is exported to the PDF format.";
 
             #region #ExportToPdf
+            // Export the workbook to PDF.
             using (FileStream pdfFileStream = new FileStream("Documents\\Document_PDF.pdf", FileMode.Create))
             {
                 workbook.ExportToPdf(pdfFileStream);

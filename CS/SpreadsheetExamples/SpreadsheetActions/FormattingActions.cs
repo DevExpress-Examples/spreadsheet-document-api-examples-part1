@@ -8,7 +8,7 @@ using System.Drawing;
 namespace SpreadsheetExamples {
     public static class FormattingActions {
         #region Actions
-        public static Action<Workbook> ApplayStyleAction = ApplayStyle;
+        public static Action<Workbook> ApplyStyleAction = ApplyStyle;
         public static Action<Workbook> CreateModifyStyleAction = CreateModifyStyle;
         public static Action<Workbook> FormatCellAction = FormatCell;
         public static Action<Workbook> SetDateFormatsAction = SetDateFormats;
@@ -19,17 +19,17 @@ namespace SpreadsheetExamples {
         public static Action<Workbook> AddCellBordersAction = AddCellBorders;
         #endregion
 
-        static void ApplayStyle(Workbook workbook) {
+        static void ApplyStyle(Workbook workbook) {
             #region #ApplyCellStyle
             Worksheet worksheet = workbook.Worksheets[0];
 
             // Access the built-in "Good" MS Excel style from the Styles collection of the workbook.
             Style styleGood = workbook.Styles[BuiltInStyleId.Good];
 
-            // Apply the "Good" style to a range of cells.
+            // Apply the "Good" style to a cell range.
             worksheet.Range["A1:C4"].Style = styleGood;
 
-            // Access a custom style that has been previously created in the loaded document by its name.
+            // Access a previously created custom style by its name.
             Style customStyle = workbook.Styles["Custom Style"];
 
             // Apply the custom style to the cell.
@@ -45,19 +45,19 @@ namespace SpreadsheetExamples {
 
         static void CreateModifyStyle(Workbook workbook) {
             #region #CreateNewStyle
-            // Add a new style under the "My Style" name to the Styles collection of the workbook.
+            // Add a new style under the "My Style" name to the workbook's Styles collection.
             Style myStyle = workbook.Styles.Add("My Style");
 
             // Specify formatting characteristics for the style.
             myStyle.BeginUpdate();
             try {
-                // Set the font color to Blue.
+                // Specify the font color.
                 myStyle.Font.Color = Color.Blue;
 
-                // Set the font size to 12.
+                // Specify the font size.
                 myStyle.Font.Size = 12;
 
-                // Set the horizontal alignment to Center.
+                // Specify the horizontal alignment.
                 myStyle.Alignment.Horizontal = SpreadsheetHorizontalAlignment.Center;
 
                 // Set the background.
@@ -104,7 +104,7 @@ namespace SpreadsheetExamples {
             worksheet.Range["C3:E6"].Value = "Test";
 
             #region #CellFormatting
-            // Access the cell to be formatted.
+            // Access the "B2" cell.
             Cell cell = worksheet.Cells["B2"];
 
             // Specify font settings (font name, color, size and style).
@@ -113,19 +113,19 @@ namespace SpreadsheetExamples {
             cell.Font.Size = 14;
             cell.Font.FontStyle = SpreadsheetFontStyle.Bold;
 
-            // Specify cell background color.
+            // Specify the cell background color.
             cell.Fill.BackgroundColor = Color.LightSkyBlue;
 
-            // Specify text alignment in the cell. 
+            // Specify text alignment. 
             cell.Alignment.Vertical = SpreadsheetVerticalAlignment.Center;
             cell.Alignment.Horizontal = SpreadsheetHorizontalAlignment.Center;
             #endregion #CellFormatting
 
             #region #RangeFormatting
-            // Access the range of cells to be formatted.
+            // Access the "C3:E6" cell range.
             CellRange range = worksheet.Range["C3:E6"];
 
-            // Begin updating of the range formatting. 
+            // Start to update the cell range formatting. 
             Formatting rangeFormatting = range.BeginUpdateFormatting();
 
             // Specify font settings (font name, color, size and style).
@@ -134,14 +134,14 @@ namespace SpreadsheetExamples {
             rangeFormatting.Font.Size = 14;
             rangeFormatting.Font.FontStyle = SpreadsheetFontStyle.Bold;
 
-            // Specify cell background color.
+            // Specify the cell background color.
             rangeFormatting.Fill.BackgroundColor = Color.LightSkyBlue;
 
-            // Specify text alignment in cells.
+            // Specify text alignment.
             rangeFormatting.Alignment.Vertical = SpreadsheetVerticalAlignment.Center;
             rangeFormatting.Alignment.Horizontal = SpreadsheetHorizontalAlignment.Center;
 
-            // End updating of the range formatting.
+            // Finalize to update the cell range formatting.
             range.EndUpdateFormatting(rangeFormatting);
             #endregion #RangeFormatting
         }
@@ -229,7 +229,7 @@ namespace SpreadsheetExamples {
             worksheet.Cells["A1"].Font.Color = Color.Red;
             worksheet.Cells["A1"].FillColor = Color.Yellow;
 
-            // Format a range of cells.
+            // Format a cell range.
             CellRange range = worksheet.Range["C3:D4"];
             Formatting rangeFormatting = range.BeginUpdateFormatting();
             rangeFormatting.Font.Color = Color.Blue;
@@ -250,15 +250,15 @@ namespace SpreadsheetExamples {
             #region #FontSettings
             // Access the Font object.
             SpreadsheetFont cellFont = worksheet.Cells["A1"].Font;
-            // Set the font name.
+            // Specify the font name.
             cellFont.Name = "Times New Roman";
-            // Set the font size.
+            // Specify the font size.
             cellFont.Size = 14;
-            // Set the font color.
+            // Specify the font color.
             cellFont.Color = Color.Blue;
             // Format text as bold.
             cellFont.Bold = true;
-            // Set font to be underlined.
+            // Specify the font underline type.
             cellFont.UnderlineType = UnderlineType.Double;
             #endregion #FontSettings
         }
@@ -272,30 +272,36 @@ namespace SpreadsheetExamples {
             range.RowHeight = 200;
 
             #region #AlignCellContents
+            // Align the "A1" cell content.
             Cell cellA1 = worksheet.Cells["A1"];
             cellA1.Value = "Right and top";
             cellA1.Alignment.Horizontal = SpreadsheetHorizontalAlignment.Right;
             cellA1.Alignment.Vertical = SpreadsheetVerticalAlignment.Top;
 
+            // Align the "A2" cell content.
             Cell cellA2 = worksheet.Cells["A2"];
             cellA2.Value = "Center";
             cellA2.Alignment.Horizontal = SpreadsheetHorizontalAlignment.Center;
             cellA2.Alignment.Vertical = SpreadsheetVerticalAlignment.Center;
 
+            // Align the "A3" cell content.
             Cell cellA3 = worksheet.Cells["A3"];
             cellA3.Value = "Left and bottom, indent";
             cellA3.Alignment.Indent = 1;
 
+            // Align the "B1" cell content.
             Cell cellB1 = worksheet.Cells["B1"];
             cellB1.Value = "The Alignment.ShrinkToFit property is applied";
             cellB1.Alignment.ShrinkToFit = true;
 
+            // Align the "B2" cell content.
             Cell cellB2 = worksheet.Cells["B2"];
             cellB2.Value = "Rotated Cell Contents";
             cellB2.Alignment.Horizontal = SpreadsheetHorizontalAlignment.Center;
             cellB2.Alignment.Vertical = SpreadsheetVerticalAlignment.Center;
             cellB2.Alignment.RotationAngle = 15;
 
+            // Align the "B3" cell content.
             Cell cellB3 = worksheet.Cells["B3"];
             cellB3.Value = "The Alignment.WrapText property is applied to wrap the text within a cell";
             cellB3.Alignment.WrapText = true;
@@ -306,7 +312,7 @@ namespace SpreadsheetExamples {
             #region #CellBorders
             Worksheet worksheet = workbook.Worksheets[0];
 
-            // Set each particular border for the cell.
+            // Specify borders for the "B2" cell.
             Cell cellB2 = worksheet.Cells["B2"];
             Borders cellB2Borders = cellB2.Borders;
             cellB2Borders.LeftBorder.LineStyle = BorderLineStyle.MediumDashDot;
@@ -321,27 +327,27 @@ namespace SpreadsheetExamples {
             cellB2Borders.DiagonalBorderLineStyle = BorderLineStyle.Thick;
             cellB2Borders.DiagonalBorderColor = Color.Red;
 
-            // Set diagonal borders for the cell.
+            // Specify diagonal borders for the "C4" cell.
             Cell cellC4 = worksheet.Cells["C4"];
             Borders cellC4Borders = cellC4.Borders;
             cellC4Borders.SetDiagonalBorders(Color.Orange, BorderLineStyle.Double, DiagonalBorderType.UpAndDown);
 
-            // Set all outside borders for the cell in one step. 
+            // Specify outside borders for the "D6" cell. 
             Cell cellD6 = worksheet.Cells["D6"];
             cellD6.Borders.SetOutsideBorders(Color.Gold, BorderLineStyle.Double);
             #endregion #CellBorders
 
             #region #CellRangeBorders
-            // Set all borders for the range of cells in one step.
+            // Specify all borders for the "B8:F13" cell range.
             CellRange range1 = worksheet.Range["B8:F13"];
             range1.Borders.SetAllBorders(Color.Green, BorderLineStyle.Double);
 
-            // Set all inside and outside borders separately for the range of cells.
+            // Specify inside and outside borders for the "C15:F18" cell range.
             CellRange range2 = worksheet.Range["C15:F18"];
             range2.SetInsideBorders(Color.SkyBlue, BorderLineStyle.MediumDashed);
             range2.Borders.SetOutsideBorders(Color.DeepSkyBlue, BorderLineStyle.Medium);
 
-            // Set all horizontal and vertical borders separately for the range of cells.
+            // Specify horizontal and vertical borders for the "D21:F23" cell range.
             CellRange range3 = worksheet.Range["D21:F23"];
             Formatting range3Formatting = range3.BeginUpdateFormatting();
             Borders range3Borders = range3Formatting.Borders;
@@ -351,7 +357,7 @@ namespace SpreadsheetExamples {
             range3Borders.InsideVerticalBorders.Color = Color.Blue;
             range3.EndUpdateFormatting(range3Formatting);
 
-            // Set each particular border for the range of cell. 
+            // Specify borders for the "E25:F26" cell range. 
             CellRange range4 = worksheet.Range["E25:F26"];
             Formatting range4Formatting = range4.BeginUpdateFormatting();
             Borders range4Borders = range4Formatting.Borders;
