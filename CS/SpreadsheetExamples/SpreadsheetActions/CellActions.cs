@@ -44,7 +44,7 @@ namespace SpreadsheetExamples {
             worksheet.Cells["B7"].Value = 'a';
             worksheet.Cells["B8"].Value = Int32.MaxValue;
 
-            // Fill all cells in the range with 10.
+            // Fill all cells in the "B10:E10" range with 10.
             worksheet.Range["B10:E10"].Value = 10;
             #endregion #CellValue
         }
@@ -81,8 +81,10 @@ namespace SpreadsheetExamples {
                 worksheet.Cells["B8"].SetValueFromText("27-Jul-16 5:43PM", true);
                 worksheet.Cells["B9"].SetValueFromText("=SQRT(25)");
 
-                // Fill all cells in the range with 10.
-                worksheet.Range["C11:F11"].SetValueFromText("=B1");
+                // Apply the date and time display format to the "C11:F11" cell range.
+                worksheet.Range["C11:F11"].NumberFormat = "m/d/yy h:mm";
+                // Fill all cells in the "C11:F11" range with the "B1" cell value. 
+                worksheet.Range["C11:F11"].SetValueFromText("=B1", true);
                 #endregion #SetValueFromText
             }
             finally {
@@ -103,7 +105,7 @@ namespace SpreadsheetExamples {
 
             // Create a new defined name with the specifed range name and absolute reference.
             DefinedName definedName = worksheet.DefinedNames.Add("rangeB17D20", "Sheet1!$B$17:$D$20");
-            // Create a range using the specified defined name.
+            // Use the specified defined name to obtain the cell range.
             CellRange B17D20 = worksheet.Range[definedName.Name];
             #endregion #NamedRange
         }
@@ -111,6 +113,7 @@ namespace SpreadsheetExamples {
         static void AddHyperlink(Workbook workbook) {
 
             Worksheet worksheet = workbook.Worksheets[0];
+            
             worksheet.Range["A:C"].ColumnWidthInCharacters = 12;
 
             #region #AddHyperlink
@@ -128,6 +131,7 @@ namespace SpreadsheetExamples {
         static void CopyCellDataAndStyle(Workbook workbook) {
             #region #CopyCell
             Worksheet worksheet = workbook.Worksheets[0];
+            
             worksheet.Columns["A"].WidthInCharacters = 32;
             worksheet.Columns["B"].WidthInCharacters = 20;
             Style style = workbook.Styles[BuiltInStyleId.Input];
@@ -182,13 +186,12 @@ namespace SpreadsheetExamples {
             worksheet.Cells["C3"].FillColor = Color.LightSalmon;
 
             #region #MergeCells
-            // Merge cells contained in the range.
+            // Merge cells contained in the "A1:C5" range.
             worksheet.MergeCells(worksheet.Range["A1:C5"]);
             #endregion #MergeCells
         }
 
         static void ClearCells(Workbook workbook) {
-
             Worksheet worksheet = workbook.Worksheets[0];
 
             worksheet.Range["A:D"].ColumnWidthInCharacters = 30;
