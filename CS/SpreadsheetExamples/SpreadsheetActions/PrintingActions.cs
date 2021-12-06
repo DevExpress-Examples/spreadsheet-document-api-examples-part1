@@ -14,7 +14,7 @@ namespace SpreadsheetExamples {
 
             Worksheet worksheet = workbook.Worksheets[0];
 
-            // Generate worksheet content - the simple multiplication table.
+            // Generate a simple multiplication table.
             CellRange topHeader = worksheet.Range.FromLTRB(1, 0, 20, 0);
             topHeader.Formula = "=COLUMN() - 1";
             CellRange leftCaption = worksheet.Range.FromLTRB(0, 1, 0, 20);
@@ -44,13 +44,13 @@ namespace SpreadsheetExamples {
             //  Display row and column headings.
             worksheet.ActiveView.ShowHeadings = true;
             worksheet.ActiveView.PaperKind = System.Drawing.Printing.PaperKind.A4;
-            // Access an object providing print options.
+            // Access an object that contains print options.
             WorksheetPrintOptions printOptions = worksheet.PrintOptions;
             //  Print in black and white.
             printOptions.BlackAndWhite = true;
             //  Do not print gridlines.
             printOptions.PrintGridlines = false;
-            //  Scale the print area to fit to a  page.
+            //  Scale the print area to fit to a page.
             printOptions.FitToPage = true;
             //  Print a dash instead of a cell error message.
             printOptions.ErrorsPrintMode = ErrorsPrintMode.Dash;

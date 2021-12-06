@@ -23,13 +23,13 @@ namespace SpreadsheetExamples {
             }
             
             #region #InsertRows
-            // Insert a new row 3.
+            // Insert the third row.
             worksheet.Rows["3"].Insert();
 
-            // Insert a new row into the worksheet at the 5the position.
+            // Insert the fifth row.
             worksheet.Rows.Insert(4);
 
-            // Insert five rows into the worksheet at the 9th position.
+            // Insert five rows (from row 9 to row 13).
             worksheet.Rows.Insert(8, 5);
 
             // Insert two rows above the "L15:M16" cell range.
@@ -37,13 +37,13 @@ namespace SpreadsheetExamples {
             #endregion #InsertRows
 
             #region #InsertColumns
-            // Insert a new column C.
+            // Insert column "C".
             worksheet.Columns["C"].Insert();
 
-            // Insert a new column into the worksheet at the 5th position.
+            // Insert column "E".
             worksheet.Columns.Insert(4);
 
-            // Insert three columns into the worksheet at the 7th position.
+            // Insert three columns (from column "G" to column "I").
             worksheet.Columns.Insert(6, 3);
 
             // Insert two columns to the left of the "L15:M16" cell range.
@@ -62,30 +62,30 @@ namespace SpreadsheetExamples {
             }
 
             #region #DeleteRows
-            // Delete the 2nd row from the worksheet.
+            // Delete the second row.
             worksheet.Rows[1].Delete();
 
-            // Delete the 3rd row from the worksheet.
+            // Delete the third row.
             worksheet.Rows.Remove(2);
 
-            // Delete three rows from the worksheet starting from the 10th row.
+            // Delete three rows (from row 10 to row 12).
             worksheet.Rows.Remove(9, 3);
 
-            // Delete a row that contains the "B2"cell.
+            // Delete a row that contains the "B2" cell.
             worksheet.DeleteCells(worksheet.Cells["B2"], DeleteMode.EntireRow);
             #endregion #DeleteRows
 
             #region #DeleteColumns
-            // Delete the 2nd column from the worksheet.
+            // Delete the second column.
             worksheet.Columns[1].Delete();
 
-            // Delete the 3rd column from the worksheet.
+            // Delete the third column.
             worksheet.Columns.Remove(2);
 
-            // Delete three columns from the worksheet starting from the 10th column.
+            // Delete three columns (from column "J" to column "L").
             worksheet.Columns.Remove(9, 3);
 
-            // Delete a column that contains the "B2"cell.
+            // Delete a column that contains the "B2" cell.
             worksheet.DeleteCells(worksheet.Cells["B2"], DeleteMode.EntireColumn);
             #endregion #DeleteColumns
         }
@@ -93,7 +93,7 @@ namespace SpreadsheetExamples {
         static void CopyRowsColumns(Workbook workbook) {
             Worksheet worksheet = workbook.Worksheets[0];
 
-            // Modify the 2nd row. 
+            // Modify the second row. 
             worksheet.Cells["A2"].Value = "Row 2";
             worksheet.Rows["2"].Height = 150;
             worksheet.Rows["2"].Alignment.Vertical = SpreadsheetVerticalAlignment.Center;
@@ -104,7 +104,7 @@ namespace SpreadsheetExamples {
             worksheet.Columns["B"].Borders.SetOutsideBorders(Color.CadetBlue, BorderLineStyle.Thick);
             
             #region #CopyRowsColumns
-            // Copy all data from the 2nd row to the 5th row.
+            // Copy all data from the second row to the fifth row.
             worksheet.Rows["5"].CopyFrom(worksheet.Rows["2"]);
 
             // Copy only borders from the "B" column to the "E" column.
@@ -116,9 +116,9 @@ namespace SpreadsheetExamples {
             #region #ShowHideRowsColumns
             Worksheet worksheet = workbook.Worksheets[0];
             
-            // Hide the 8th row of the worksheet.
+            // Hide the eighth row.
             worksheet.Rows[7].Visible = false;            
-            // Hide the 4th column of the worksheet.
+            // Hide the fourth column.
             worksheet.Columns[3].Visible = false;
 
             // Hide columns from 5 to 7.
@@ -126,9 +126,9 @@ namespace SpreadsheetExamples {
             // Hide rows from 6 to 8.
             worksheet.Rows.Hide(5, 7);
 
-            // Hide the 10th row of the worksheet.
+            // Hide the tenth row.
             worksheet.Rows[9].Height = 0;
-            // Hide the 10th column of the worksheet.
+            // Hide the tenth column.
             worksheet.Columns[9].Width = 0;
             #endregion #ShowHideRowsColumns
         }
@@ -157,7 +157,7 @@ namespace SpreadsheetExamples {
             worksheet.Range["A3:A7"].EndUpdateFormatting(rowHeightValues);
 
             #region #RowHeight
-            // Set the height of the 3rd row to 50 points.
+            // Set the height of the third row to 50 points.
             workbook.Unit = DevExpress.Office.DocumentUnit.Point;
             worksheet.Rows[2].Height = 50;
 
@@ -165,7 +165,7 @@ namespace SpreadsheetExamples {
             workbook.Unit = DevExpress.Office.DocumentUnit.Inch;
             worksheet.Cells["C5"].RowHeight = 2;
 
-            // Set the height of the 7th row to the height of the 3rd row.
+            // Set the height of the seventh row to the height of the third row.
             worksheet.Rows["7"].Height = worksheet.Rows["3"].Height;
 
             // Set the default row height to 30 points.

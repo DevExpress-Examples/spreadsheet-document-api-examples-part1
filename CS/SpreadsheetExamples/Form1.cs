@@ -76,7 +76,7 @@ namespace SpreadsheetExamples {
             examples[3].Groups.Add(new SpreadsheetExample("Shared and Array Formulas", FormulaActions.CreateSharedAndArrayFormulasAction));
 
             // Add nodes to the "Formatting" group of examples.
-            examples[4].Groups.Add(new SpreadsheetExample("Apply a Style", FormattingActions.ApplayStyleAction));
+            examples[4].Groups.Add(new SpreadsheetExample("Apply a Style", FormattingActions.ApplyStyleAction));
             examples[4].Groups.Add(new SpreadsheetExample("Create and Modify a Style", FormattingActions.CreateModifyStyleAction));
             examples[4].Groups.Add(new SpreadsheetExample("Individual Cell Formatting", FormattingActions.FormatCellAction));
             examples[4].Groups.Add(new SpreadsheetExample("Date Formats", FormattingActions.SetDateFormatsAction));

@@ -69,10 +69,10 @@ namespace SpreadsheetExamples {
                 #endregion #CustomProperties
 
                 #region #LinkToContent
-                //Define a name to the cell to be linked to the custom property
+                // Define a name to the cell linked to the custom property.
                 workbook.DefinedNames.Add("checked_by", "E6");
 
-                //Connect the custom property with the named cell
+                // Connect the custom property with the named cell.
                 workbook.DocumentProperties.Custom.LinkToContent("Checked by", "checked_by");
                 #endregion #LinkToContent
 
