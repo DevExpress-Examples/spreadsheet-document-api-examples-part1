@@ -40,14 +40,14 @@ The application’s form contains the list of supported operations. A user can s
 
 ## Documentation
 
-- [Examples: Worksheets](https://docs.devexpress.com/OfficeFileAPI/14930/spreadsheet-document-api/examples/worksheets)
-- [Examples: Rows and Columns](https://docs.devexpress.com/OfficeFileAPI/14938/spreadsheet-document-api/examples/rows-and-columns)
-- [Examples: Cells](https://docs.devexpress.com/OfficeFileAPI/14944/spreadsheet-document-api/examples/cells)  
+- [Worksheets](https://docs.devexpress.com/OfficeFileAPI/14930/spreadsheet-document-api/examples/worksheets)
+- [Rows and Columns](https://docs.devexpress.com/OfficeFileAPI/14938/spreadsheet-document-api/examples/rows-and-columns)
+- [Cells](https://docs.devexpress.com/OfficeFileAPI/14944/spreadsheet-document-api/examples/cells)  
 - [Formulas](https://docs.devexpress.com/OfficeFileAPI/14928/spreadsheet-document-api/spreadsheet-formulas)
 - [Cell Formatting](https://docs.devexpress.com/OfficeFileAPI/14915/spreadsheet-document-api/cell-basics/formatting-cells) 
-- [Examples: Import and Export Data](https://docs.devexpress.com/OfficeFileAPI/118182/spreadsheet-document-api/examples/import-and-export-data)  
-- [Examples: Printing](https://docs.devexpress.com/OfficeFileAPI/15532/spreadsheet-document-api/examples/printing)  
-- [How to: Specify Document Properties](https://docs.devexpress.com/OfficeFileAPI/117097/spreadsheet-document-api/examples/workbooks/how-to-specify-document-properties) 
+- [Import and Export Data](https://docs.devexpress.com/OfficeFileAPI/118182/spreadsheet-document-api/examples/import-and-export-data)  
+- [Printing](https://docs.devexpress.com/OfficeFileAPI/15532/spreadsheet-document-api/examples/printing)  
+- [Specify Document Properties](https://docs.devexpress.com/OfficeFileAPI/117097/spreadsheet-document-api/examples/workbooks/how-to-specify-document-properties) 
 
 ## More Examples
 
