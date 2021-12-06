@@ -113,7 +113,7 @@ namespace SpreadsheetExamples {
             workbook.Worksheets["Sheet2"].VisibilityType = WorksheetVisibilityType.VeryHidden;
 
             // Hide the "Sheet3" worksheet. 
-            // Use the user interface to unhide this worksheet.
+            // You can unhide this worksheet from the user interface.
             workbook.Worksheets["Sheet3"].Visible = false;
             #endregion #ShowHideWorksheet
         }

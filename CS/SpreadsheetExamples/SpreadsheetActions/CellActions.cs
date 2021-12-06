@@ -81,7 +81,7 @@ namespace SpreadsheetExamples {
                 worksheet.Cells["B8"].SetValueFromText("27-Jul-16 5:43PM", true);
                 worksheet.Cells["B9"].SetValueFromText("=SQRT(25)");
 
-                // Apply the time display format to the "C11:F11" cell range.
+                // Apply the date and time display format to the "C11:F11" cell range.
                 worksheet.Range["C11:F11"].NumberFormat = "m/d/yy h:mm";
                 // Fill all cells in the "C11:F11" range with the "B1" cell value. 
                 worksheet.Range["C11:F11"].SetValueFromText("=B1", true);
@@ -105,7 +105,7 @@ namespace SpreadsheetExamples {
 
             // Create a new defined name with the specifed range name and absolute reference.
             DefinedName definedName = worksheet.DefinedNames.Add("rangeB17D20", "Sheet1!$B$17:$D$20");
-            // Create a range and use the specified defined name.
+            // Use the specified defined name to obtain the cell range.
             CellRange B17D20 = worksheet.Range[definedName.Name];
             #endregion #NamedRange
         }

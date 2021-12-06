@@ -22,15 +22,13 @@ namespace SpreadsheetExamples {
             workbook.Worksheets[0].Cells["A1"].ColumnWidthInCharacters = 35;
             workbook.Worksheets[0].Cells["A1"].Value = "Import an array horizontally:";
             workbook.Worksheets[0].Cells["A3"].Value = "Import a two-dimensional array:";
-            //workbook.Worksheets[0].Cells["A6"].Value = "Import data from ArrayList vertically:";
-            //workbook.Worksheets[0].Cells["A11"].Value = "Import data from a DataTable:";
 
             #region #ImportArray
             Worksheet worksheet = workbook.Worksheets[0];
             // Create an array of strings.
             string[] array = new string[] { "AAA", "BBB", "CCC", "DDD" };
-
-            // Import the array into the worksheet and insert it horizontally, starting with the "B1" cell.
+            // Insert array values into the worksheet horizontally.
+            // Data import starts with the "B1" cell.
             worksheet.Import(array, 0, 1, false);
             #endregion #ImportArray
 
@@ -40,8 +38,8 @@ namespace SpreadsheetExamples {
             {"Ann", "Edward", "Angela", "Alex"},
             {"Rachel", "Bruce", "Barbara", "George"}
             };
-
-            // Import the two-dimensional array into the worksheet and insert it, starting with the "B3" cell.
+            // Insert array values into the worksheet.
+            // Data import starts with the "B3" cell.
             worksheet.Import(names, 2, 1);
             #endregion #ImportTwoDimensionalArray
         }
@@ -55,8 +53,8 @@ namespace SpreadsheetExamples {
             cities.Add("Rome");
             cities.Add("Beijing");
             cities.Add("Delhi");
-
-            // Import the list into the worksheet and insert it vertically, starting with the "B6" cell.
+            // Insert list values into the worksheet vertically.
+            // Data import starts with the "A1" cell.
             worksheet.Import(cities, 0, 0, true);
             #endregion #ImportList
         }
@@ -65,7 +63,7 @@ namespace SpreadsheetExamples {
         {  
             #region #ImportDataTable
             Worksheet worksheet = workbook.Worksheets[0];
-            // Create a "Employees" DataTable object with four columns.
+            // Create an "Employees" DataTable object with four columns.
             DataTable table = new DataTable("Employees");
             table.Columns.Add("FirstN", typeof(string));
             table.Columns.Add("LastN", typeof(string));
@@ -75,7 +73,8 @@ namespace SpreadsheetExamples {
             table.Rows.Add("Nancy", "Davolio", "recruiter", 32);
             table.Rows.Add("Andrew", "Fuller", "engineer", 28);
 
-            // Import data from the data table into the worksheet and insert it, starting with the "B11" cell.
+            // Insert data table values into the worksheet.
+            // Data import starts with the "A1" cell.
             worksheet.Import(table, true, 0, 0);
 
             // Color the table header.

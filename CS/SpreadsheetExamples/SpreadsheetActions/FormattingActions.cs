@@ -29,7 +29,7 @@ namespace SpreadsheetExamples {
             // Apply the "Good" style to a cell range.
             worksheet.Range["A1:C4"].Style = styleGood;
 
-            // Access a previously created custom style by its name.
+            // Access the previously created custom style by its name.
             Style customStyle = workbook.Styles["Custom Style"];
 
             // Apply the custom style to the cell.
@@ -45,7 +45,7 @@ namespace SpreadsheetExamples {
 
         static void CreateModifyStyle(Workbook workbook) {
             #region #CreateNewStyle
-            // Add a new style under the "My Style" name to the workbook's Styles collection.
+            // Add a new style under the "My Style" name to the workbook's style collection.
             Style myStyle = workbook.Styles.Add("My Style");
 
             // Specify formatting characteristics for the style.
@@ -71,7 +71,7 @@ namespace SpreadsheetExamples {
             #endregion #CreateNewStyle
 
             #region #DuplicateExistingStyle
-            // Add a new style under the "My Good Style" name to the Styles collection.
+            // Add a new style under the "My Good Style" name to the workbook's style collection.
             Style myGoodStyle = workbook.Styles.Add("My Good Style");
 
             // Copy all format settings from the built-in Good style.
