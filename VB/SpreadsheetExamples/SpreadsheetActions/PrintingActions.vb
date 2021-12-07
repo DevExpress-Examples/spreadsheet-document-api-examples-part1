@@ -1,23 +1,18 @@
-﻿Imports System
+Imports System
 Imports System.Drawing
-#Region "#printingUsings"
+'#Region "#printingUsings"
 Imports DevExpress.Spreadsheet
 Imports DevExpress.XtraPrinting
-#End Region ' #printingUsings
 
+'#End Region  ' #printingUsings
 Namespace SpreadsheetExamples
-    Public NotInheritable Class PrintingActions
 
-        Private Sub New()
-        End Sub
+    Public Module PrintingActions
 
+        Public PrintAction As Action(Of Workbook) = AddressOf Print
 
-        Public Shared PrintAction As Action(Of Workbook) = AddressOf Print
-
-        Private Shared Sub Print(ByVal workbook As Workbook)
-
+        Private Sub Print(ByVal workbook As Workbook)
             Dim worksheet As Worksheet = workbook.Worksheets(0)
-
             ' Generate worksheet content - the simple multiplication table.
             Dim topHeader As Range = worksheet.Range.FromLTRB(1, 0, 20, 0)
             topHeader.Formula = "=COLUMN() - 1"
@@ -25,25 +20,19 @@ Namespace SpreadsheetExamples
             leftCaption.Formula = "=ROW() - 1"
             Dim tableRange As Range = worksheet.Range.FromLTRB(1, 1, 20, 20)
             tableRange.Formula = "=(ROW()-1)*(COLUMN()-1)"
-
-
-
             ' Format headers of the multiplication table.
             Dim rangeFormatting As Formatting = topHeader.BeginUpdateFormatting()
             rangeFormatting.Borders.BottomBorder.LineStyle = BorderLineStyle.Thin
             rangeFormatting.Borders.BottomBorder.Color = Color.Black
             topHeader.EndUpdateFormatting(rangeFormatting)
-
             rangeFormatting = leftCaption.BeginUpdateFormatting()
             rangeFormatting.Borders.RightBorder.LineStyle = BorderLineStyle.Thin
             rangeFormatting.Borders.RightBorder.Color = Color.Black
             leftCaption.EndUpdateFormatting(rangeFormatting)
-
             rangeFormatting = tableRange.BeginUpdateFormatting()
             rangeFormatting.Fill.BackgroundColor = Color.LightBlue
             tableRange.EndUpdateFormatting(rangeFormatting)
-
-'            #Region "#WorksheetPrintOptions"
+'#Region "#WorksheetPrintOptions"
             worksheet.ActiveView.Orientation = PageOrientation.Landscape
             '  Display row and column headings.
             worksheet.ActiveView.ShowHeadings = True
@@ -58,18 +47,17 @@ Namespace SpreadsheetExamples
             printOptions.FitToPage = True
             '  Print a dash instead of a cell error message.
             printOptions.ErrorsPrintMode = ErrorsPrintMode.Dash
-'            #End Region ' #WorksheetPrintOptions
-
-'            #Region "#PrintWorkbook"
+'#End Region  ' #WorksheetPrintOptions
+'#Region "#PrintWorkbook"
             ' Invoke the Print Preview dialog for the workbook.
-            Using printingSystem As New PrintingSystem()
-                Using link As New PrintableComponentLink(printingSystem)
+            Using printingSystem As PrintingSystem = New PrintingSystem()
+                Using link As PrintableComponentLink = New PrintableComponentLink(printingSystem)
                     link.Component = workbook
                     link.CreateDocument()
                     link.PrintingSystem.PreviewFormEx.ShowDialog()
                 End Using
             End Using
-'            #End Region ' #PrintWorkbook
+'#End Region  ' #PrintWorkbook
         End Sub
-    End Class
+    End Module
 End Namespace
