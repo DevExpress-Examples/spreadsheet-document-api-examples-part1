@@ -1,6 +1,9 @@
-﻿Imports System.Drawing
+Imports System.Drawing
+
 Namespace SpreadsheetExamples
-    Partial Public Class Form1
+
+    Partial Class Form1
+
         ''' <summary>
         ''' Required designer variable.
         ''' </summary>
@@ -11,14 +14,14 @@ Namespace SpreadsheetExamples
         ''' </summary>
         ''' <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-            If disposing AndAlso (components IsNot Nothing) Then
-                components.Dispose()
+            If disposing AndAlso (Me.components IsNot Nothing) Then
+                Me.components.Dispose()
             End If
+
             MyBase.Dispose(disposing)
         End Sub
 
-        #Region "Windows Form Designer generated code"
-
+'#Region "Windows Form Designer generated code"
         ''' <summary>
         ''' Required method for Designer support - do not modify
         ''' the contents of this method with the code editor.
@@ -28,8 +31,8 @@ Namespace SpreadsheetExamples
             Me.treeListColumn1 = New DevExpress.XtraTreeList.Columns.TreeListColumn()
             Me.button1 = New System.Windows.Forms.Button()
             Me.splitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
-            CType(Me.treeList1, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me.splitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.treeList1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.splitContainerControl1), System.ComponentModel.ISupportInitialize).BeginInit()
             Me.splitContainerControl1.SuspendLayout()
             Me.SuspendLayout()
             ' 
@@ -39,7 +42,7 @@ Namespace SpreadsheetExamples
             Me.treeList1.Appearance.FocusedCell.ForeColor = System.Drawing.Color.Blue
             Me.treeList1.Appearance.FocusedCell.Options.UseFont = True
             Me.treeList1.Appearance.FocusedCell.Options.UseForeColor = True
-            Me.treeList1.Columns.AddRange(New DevExpress.XtraTreeList.Columns.TreeListColumn() { Me.treeListColumn1})
+            Me.treeList1.Columns.AddRange(New DevExpress.XtraTreeList.Columns.TreeListColumn() {Me.treeListColumn1})
             Me.treeList1.Dock = System.Windows.Forms.DockStyle.Fill
             Me.treeList1.Location = New System.Drawing.Point(0, 0)
             Me.treeList1.Name = "treeList1"
@@ -67,6 +70,7 @@ Namespace SpreadsheetExamples
             Me.button1.TabIndex = 1
             Me.button1.Text = "Run"
             Me.button1.UseVisualStyleBackColor = True
+            AddHandler Me.button1.Click, New System.EventHandler(AddressOf Me.button1_Click)
             ' 
             ' splitContainerControl1
             ' 
@@ -92,19 +96,19 @@ Namespace SpreadsheetExamples
             Me.Controls.Add(Me.splitContainerControl1)
             Me.Name = "Form1"
             Me.Text = "Form1"
-            CType(Me.treeList1, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(Me.splitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.treeList1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.splitContainerControl1), System.ComponentModel.ISupportInitialize).EndInit()
             Me.splitContainerControl1.ResumeLayout(False)
             Me.ResumeLayout(False)
-
         End Sub
 
-        #End Region
-
+'#End Region
         Private treeList1 As DevExpress.XtraTreeList.TreeList
-        Private WithEvents button1 As System.Windows.Forms.Button
+
+        Private button1 As System.Windows.Forms.Button
+
         Private treeListColumn1 As DevExpress.XtraTreeList.Columns.TreeListColumn
+
         Private splitContainerControl1 As DevExpress.XtraEditors.SplitContainerControl
     End Class
 End Namespace
-
