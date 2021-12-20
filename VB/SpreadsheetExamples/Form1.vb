@@ -16,6 +16,7 @@ Namespace SpreadsheetExamples
         Public Sub New()
             InitializeComponent()
             InitTreeListControl()
+            workbook.Options.CalculationMode = WorkbookCalculationMode.Automatic
         End Sub
 
         Private Sub InitTreeListControl()
