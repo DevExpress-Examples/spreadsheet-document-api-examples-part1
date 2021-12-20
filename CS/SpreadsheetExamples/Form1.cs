@@ -15,6 +15,7 @@ namespace SpreadsheetExamples {
         public Form1() {
             InitializeComponent();
             InitTreeListControl();
+            workbook.Options.CalculationMode = WorkbookCalculationMode.Automatic;
         }
 
         void InitTreeListControl() {
