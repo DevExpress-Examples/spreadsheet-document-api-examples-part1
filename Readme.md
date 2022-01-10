@@ -19,22 +19,22 @@ This example demonstrates how to use the Spreadsheet Document API to execute the
 - Print a workbook 
 - Specify the built-in and custom document properties 
 
-The application’s form contains the list of supported operations. A user can select an operation and click the **Run** button to view the resulting spreadsheet document in Microsoft Excel.
+The application form contains the list of supported operations. A user can select an operation and click the **Run** button to view the resulting spreadsheet document in Microsoft Excel.
 
 ![Spreadsheet Document API - List of Supported Operations](./images/spreadsheet-document-api-part-1.png)
 
 <!-- default file list -->
 ## Files to Look At
 
-- [CellActions.cs](./CS/SpreadsheetExamples/SpreadsheetActions/CellActions.cs) ([CellActions.vb](./VB/SpreadsheetExamples/SpreadsheetActions/CellActions.vb)) 
-- [DocumentPropertiesActions.cs](./CS/SpreadsheetExamples/SpreadsheetActions/DocumentPropertiesActions.cs) ([DocumentPropertiesActions.vb](./VB/SpreadsheetExamples/SpreadsheetActions/DocumentPropertiesActions.vb)) 
-- [ExportActions.cs](./CS/SpreadsheetExamples/SpreadsheetActions/ExportActions.cs) ([ExportActions.vb](./VB/SpreadsheetExamples/SpreadsheetActions/ExportActions.vb)) 
-- [FormattingActions.cs](./CS/SpreadsheetExamples/SpreadsheetActions/FormattingActions.cs) ([FormattingActions.vb](./VB/SpreadsheetExamples/SpreadsheetActions/FormattingActions.vb)) 
-- [FormulaActions.cs](./CS/SpreadsheetExamples/SpreadsheetActions/FormulaActions.cs) ([FormulaActions.vb](./VB/SpreadsheetExamples/SpreadsheetActions/FormulaActions.vb)) 
-- [ImportActions.cs](./CS/SpreadsheetExamples/SpreadsheetActions/ImportActions.cs) ([ImportActions.vb](./VB/SpreadsheetExamples/SpreadsheetActions/ImportActions.vb)) 
-- [PrintingActions.cs](./CS/SpreadsheetExamples/SpreadsheetActions/PrintingActions.cs) ([PrintingActions.vb](./VB/SpreadsheetExamples/SpreadsheetActions/PrintingActions.vb)) 
-- [RowAndColumnActions.cs](./CS/SpreadsheetExamples/SpreadsheetActions/RowAndColumnActions.cs) ([RowAndColumnActions.vb](./VB/SpreadsheetExamples/SpreadsheetActions/RowAndColumnActions.vb)) 
-- [WorksheetActions.cs](./CS/SpreadsheetExamples/SpreadsheetActions/WorksheetActions.cs) ([WorksheetActions.vb](./VB/SpreadsheetExamples/SpreadsheetActions/WorksheetActions.vb)) 
+- [CellActions.cs](./CS/SpreadsheetExamples/SpreadsheetActions/CellActions.cs) (VB: [CellActions.vb](./VB/SpreadsheetExamples/SpreadsheetActions/CellActions.vb)) 
+- [DocumentPropertiesActions.cs](./CS/SpreadsheetExamples/SpreadsheetActions/DocumentPropertiesActions.cs) (VB: [DocumentPropertiesActions.vb](./VB/SpreadsheetExamples/SpreadsheetActions/DocumentPropertiesActions.vb)) 
+- [ExportActions.cs](./CS/SpreadsheetExamples/SpreadsheetActions/ExportActions.cs) (VB: [ExportActions.vb](./VB/SpreadsheetExamples/SpreadsheetActions/ExportActions.vb)) 
+- [FormattingActions.cs](./CS/SpreadsheetExamples/SpreadsheetActions/FormattingActions.cs) (VB: [FormattingActions.vb](./VB/SpreadsheetExamples/SpreadsheetActions/FormattingActions.vb)) 
+- [FormulaActions.cs](./CS/SpreadsheetExamples/SpreadsheetActions/FormulaActions.cs) (VB: [FormulaActions.vb](./VB/SpreadsheetExamples/SpreadsheetActions/FormulaActions.vb)) 
+- [ImportActions.cs](./CS/SpreadsheetExamples/SpreadsheetActions/ImportActions.cs) (VB: [ImportActions.vb](./VB/SpreadsheetExamples/SpreadsheetActions/ImportActions.vb)) 
+- [PrintingActions.cs](./CS/SpreadsheetExamples/SpreadsheetActions/PrintingActions.cs) (VB: [PrintingActions.vb](./VB/SpreadsheetExamples/SpreadsheetActions/PrintingActions.vb)) 
+- [RowAndColumnActions.cs](./CS/SpreadsheetExamples/SpreadsheetActions/RowAndColumnActions.cs) (VB: [RowAndColumnActions.vb](./VB/SpreadsheetExamples/SpreadsheetActions/RowAndColumnActions.vb)) 
+- [WorksheetActions.cs](./CS/SpreadsheetExamples/SpreadsheetActions/WorksheetActions.cs) (VB: [WorksheetActions.vb](./VB/SpreadsheetExamples/SpreadsheetActions/WorksheetActions.vb)) 
 
 <!-- default file list end -->
 
