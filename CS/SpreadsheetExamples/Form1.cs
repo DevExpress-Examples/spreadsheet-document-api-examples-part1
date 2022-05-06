@@ -77,12 +77,12 @@ namespace SpreadsheetExamples {
             examples[3].Groups.Add(new SpreadsheetExample("Shared and Array Formulas", FormulaActions.CreateSharedAndArrayFormulasAction));
 
             // Add nodes to the "Formatting" group of examples.
-            examples[4].Groups.Add(new SpreadsheetExample("Apply a Style", FormattingActions.ApplyStyleAction));
-            examples[4].Groups.Add(new SpreadsheetExample("Create and Modify a Style", FormattingActions.CreateModifyStyleAction));
+            examples[4].Groups.Add(new SpreadsheetExample("Apply a Style", FormattingActions.CreateModifyApplyStyleAction));
             examples[4].Groups.Add(new SpreadsheetExample("Individual Cell Formatting", FormattingActions.FormatCellAction));
             examples[4].Groups.Add(new SpreadsheetExample("Date Formats", FormattingActions.SetDateFormatsAction));
             examples[4].Groups.Add(new SpreadsheetExample("Number Formats", FormattingActions.SetNumberFormatsAction));
             examples[4].Groups.Add(new SpreadsheetExample("Cell Colors and Background", FormattingActions.ChangeCellColorsAction));
+            examples[4].Groups.Add(new SpreadsheetExample("Cell Gradient Fill", FormattingActions.ChangeCellGradientFillAction));
             examples[4].Groups.Add(new SpreadsheetExample("Font Settings", FormattingActions.SpecifyCellFontAction));
             examples[4].Groups.Add(new SpreadsheetExample("Cell Alignment", FormattingActions.AlignCellContentsAction));
             examples[4].Groups.Add(new SpreadsheetExample("Cell Borders", FormattingActions.AddCellBordersAction));
