@@ -154,7 +154,7 @@ Namespace SpreadsheetExamples
 #End Region  ' #PageMargins
 #Region "#PaperSize"
             ' Select the page's paper size.
-            workbook.Worksheets(0).ActiveView.PaperKind = System.Drawing.Printing.PaperKind.A4
+            workbook.Worksheets(0).ActiveView.PaperKind = DevExpress.Drawing.Printing.DXPaperKind.A4
 #End Region  ' #PaperSize
         End Sub
 

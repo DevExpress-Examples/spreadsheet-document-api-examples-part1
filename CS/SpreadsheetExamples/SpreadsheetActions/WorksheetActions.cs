@@ -164,7 +164,7 @@ namespace SpreadsheetExamples {
 
             #region #PaperSize
             // Select the page's paper size.
-            workbook.Worksheets[0].ActiveView.PaperKind = System.Drawing.Printing.PaperKind.A4;
+            workbook.Worksheets[0].ActiveView.PaperKind = DevExpress.Drawing.Printing.DXPaperKind.A4;
             #endregion #PaperSize
         }
 

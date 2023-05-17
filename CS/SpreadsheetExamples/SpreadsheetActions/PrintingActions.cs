@@ -43,7 +43,7 @@ namespace SpreadsheetExamples {
             worksheet.ActiveView.Orientation = PageOrientation.Landscape;
             //  Display row and column headings.
             worksheet.ActiveView.ShowHeadings = true;
-            worksheet.ActiveView.PaperKind = System.Drawing.Printing.PaperKind.A4;
+            worksheet.ActiveView.PaperKind = DevExpress.Drawing.Printing.DXPaperKind.A4;
             // Access an object that contains print options.
             WorksheetPrintOptions printOptions = worksheet.PrintOptions;
             //  Print in black and white.
