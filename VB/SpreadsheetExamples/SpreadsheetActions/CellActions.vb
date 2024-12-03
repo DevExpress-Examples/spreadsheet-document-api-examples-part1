@@ -1,5 +1,6 @@
 Imports System
 Imports System.Drawing
+Imports System.IO
 Imports DevExpress.Spreadsheet
 
 Namespace SpreadsheetExamples
@@ -18,6 +19,7 @@ Namespace SpreadsheetExamples
         Public CopyCellDataAndStyleAction As Action(Of Workbook) = AddressOf CopyCellDataAndStyle
 
         Public MergeAndSplitCellsAction As Action(Of Workbook) = AddressOf MergeAndSplitCells
+        Public PlaceImageInCellAction As Action(Of Workbook) = AddressOf PlaceImageInCell
 
         Public ClearCellsAction As Action(Of Workbook) = AddressOf ClearCells
 
@@ -165,6 +167,26 @@ Namespace SpreadsheetExamples
             ' Merge cells contained in the "A1:C5" range.
             worksheet.MergeCells(worksheet.Range("A1:C5"))
 #End Region  ' #MergeCells
+        End Sub
+
+        Private Sub PlaceImageInCell(ByVal workbook As Workbook)
+#Region "#PlaceImageInCell"
+            Dim worksheet As Worksheet = workbook.Worksheets.ActiveWorksheet
+
+            Dim imageBytes() As Byte = File.ReadAllBytes("Documents\x-docserver.png")
+            Dim imageStream As New MemoryStream(imageBytes)
+
+            worksheet.Cells("A2").ColumnWidthInCharacters = 20
+            ' Insert cell images from a stream
+            worksheet.Cells("A2").Value = imageStream
+
+            ' Specify image information
+            If worksheet.Cells("A2").Value.IsCellImage Then
+                worksheet.Cells("A2").ImageInfo.Decorative = True
+                worksheet.Cells("A2").ImageInfo.AlternativeText = "Image AltText"
+            End If
+#End Region  ' #PlaceImageInCell
+
         End Sub
 
         Private Sub ClearCells(ByVal workbook As Workbook)

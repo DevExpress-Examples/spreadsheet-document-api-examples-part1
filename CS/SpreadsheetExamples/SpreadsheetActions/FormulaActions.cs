@@ -1,9 +1,11 @@
-﻿using System;
-using DevExpress.Spreadsheet;
+﻿using DevExpress.Spreadsheet;
+using System;
 using System.Drawing;
 
-namespace SpreadsheetExamples {
-    public static class FormulaActions {
+namespace SpreadsheetExamples
+{
+    public static class FormulaActions
+    {
 
         #region Actions
         public static Action<Workbook> UseConstantsAndCalculationOperatorsInFormulasAction = UseConstantsAndCalculationOperatorsInFormulas;
@@ -12,9 +14,11 @@ namespace SpreadsheetExamples {
         public static Action<Workbook> CreateNamedFormulasAction = CreateNamedFormulas;
         public static Action<Workbook> UseFunctionsInFormulasAction = UseFunctionsInFormulas;
         public static Action<Workbook> CreateSharedAndArrayFormulasAction = CreateSharedAndArrayFormulas;
+        public static Action<Workbook> CreateDynamicArrayFormulasAction = CreateDynamicArrayFormulas;
         #endregion
 
-        static void UseConstantsAndCalculationOperatorsInFormulas(Workbook workbook) {
+        static void UseConstantsAndCalculationOperatorsInFormulas(Workbook workbook)
+        {
             Worksheet worksheet = workbook.Worksheets[0];
 
             worksheet.Cells["A1"].Value = "Formula";
@@ -28,7 +32,8 @@ namespace SpreadsheetExamples {
             #endregion #ConstantsAndCalculationOperators
         }
 
-        static void R1C1ReferencesInFormulas(Workbook workbook) {
+        static void R1C1ReferencesInFormulas(Workbook workbook)
+        {
             Worksheet worksheet = workbook.Worksheets[0];
 
             // Fill cells with static data.
@@ -64,7 +69,8 @@ namespace SpreadsheetExamples {
             #endregion #R1C1ReferencesInFormulas
         }
 
-        static void UseNamesInFormulas(Workbook workbook) {
+        static void UseNamesInFormulas(Workbook workbook)
+        {
             Worksheet worksheet = workbook.Worksheets[0];
 
             CellRange dataRangeHeader = worksheet.Range["A1:C1"];
@@ -144,7 +150,8 @@ namespace SpreadsheetExamples {
             workbook.Worksheets.ActiveWorksheet = workbook.Worksheets["Sheet2"];
         }
 
-        static void UseFunctionsInFormulas(Workbook workbook) {
+        static void UseFunctionsInFormulas(Workbook workbook)
+        {
             Worksheet worksheet = workbook.Worksheets[0];
             // Fill cells with static data.
             worksheet.Cells["A1"].Value = "Data";
@@ -182,7 +189,7 @@ namespace SpreadsheetExamples {
             // Use a nested function in a formula.
             // Round the sum of the values contained in the "A6" and "A7" cells to two decimal places.
             worksheet.Cells["C5"].Formula = "=ROUND(SUM(A6,A7),2)";
-            
+
             // Add the current date to the "C6" cell.
             worksheet.Cells["C6"].Formula = "=Today()";
             worksheet.Cells["C6"].NumberFormat = "m/d/yy";
@@ -192,7 +199,8 @@ namespace SpreadsheetExamples {
             #endregion #FunctionsInFormulas
         }
 
-        static void CreateSharedAndArrayFormulas(Workbook workbook) {
+        static void CreateSharedAndArrayFormulas(Workbook workbook)
+        {
             Worksheet worksheet = workbook.Worksheets[0];
 
             worksheet.Range["A1:D1"].ColumnWidthInCharacters = 10;
@@ -231,12 +239,31 @@ namespace SpreadsheetExamples {
 
             // Re-dimension an array formula range:
             // delete the array formula and create a new range with the same formula.
-            if (worksheet.Cells["C13"].HasArrayFormula) {
+            if (worksheet.Cells["C13"].HasArrayFormula)
+            {
                 string af = worksheet.Cells["C13"].ArrayFormula;
                 worksheet.Cells["C13"].GetArrayFormulaRange().ArrayFormula = string.Empty;
                 worksheet.Range["C2:C11"].ArrayFormula = af;
             }
             #endregion #ArrayFormulas
+        }
+
+        static void CreateDynamicArrayFormulas(Workbook workbook)
+        {
+            #region #DynamicArrayFormulas
+            Worksheet worksheet = workbook.Worksheets[0];
+
+            worksheet.Range["A1"].ColumnWidthInCharacters = 20;
+            worksheet.Range["A1"].Alignment.Horizontal = SpreadsheetHorizontalAlignment.Center;
+            worksheet.Range["A1"].FillColor = Color.LightGray;
+
+            worksheet.Range["A1"].Value = "Dynamic Array Formulas:";
+
+
+            // Insert dynamic array formulas
+            worksheet["A2"].DynamicArrayFormulaInvariant = "={\"Red\",\"Green\",\"Orange\",\"Blue\"}";
+            worksheet.DynamicArrayFormulas.Add(worksheet["B1"], "=LEN(A2:D2)");
+            #endregion #DynamicArrayFormulas
         }
     }
 }

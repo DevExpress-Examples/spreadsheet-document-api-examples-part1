@@ -65,6 +65,7 @@ Namespace SpreadsheetExamples
             examples(2).Groups.Add(New SpreadsheetExample("Add a Hyperlink to a Cell", AddHyperlinkAction))
             examples(2).Groups.Add(New SpreadsheetExample("Copy Data Only, Style Only, or Data with Style", CopyCellDataAndStyleAction))
             examples(2).Groups.Add(New SpreadsheetExample("Merge/Split Cells", MergeAndSplitCellsAction))
+            examples(2).Groups.Add(New SpreadsheetExample("Place Image in a Cell", PlaceImageInCellAction))
             examples(2).Groups.Add(New SpreadsheetExample("Clear Cells", ClearCellsAction))
             ' Add nodes to the "Formulas" group of examples. 
             examples(3).Groups.Add(New SpreadsheetExample("Constants and Calculation Operators in Formulas", UseConstantsAndCalculationOperatorsInFormulasAction))
@@ -72,7 +73,8 @@ Namespace SpreadsheetExamples
             examples(3).Groups.Add(New SpreadsheetExample("Names in Formulas", UseNamesInFormulasAction))
             examples(3).Groups.Add(New SpreadsheetExample("Create Named Formulas", CreateNamedFormulasAction))
             examples(3).Groups.Add(New SpreadsheetExample("Functions in Formulas", UseFunctionsInFormulasAction))
-            examples(3).Groups.Add(New SpreadsheetExample("Shared and Array Formulas", CreateSharedAndArrayFormulasAction))
+            examples(3).Groups.Add(New SpreadsheetExample("Shared and Legacy Array Formulas", CreateSharedAndArrayFormulasAction))
+            examples(3).Groups.Add(New SpreadsheetExample("Dynamic Array Formulas", CreateDynamicArrayFormulasAction))
             ' Add nodes to the "Formatting" group of examples.
             examples(4).Groups.Add(New SpreadsheetExample("Apply a Style", ApplyStyleAction))
             examples(4).Groups.Add(New SpreadsheetExample("Create and Modify a Style", CreateModifyStyleAction))

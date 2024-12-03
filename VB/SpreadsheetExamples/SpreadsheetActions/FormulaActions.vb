@@ -18,6 +18,7 @@ Namespace SpreadsheetExamples
         Public UseFunctionsInFormulasAction As Action(Of Workbook) = AddressOf UseFunctionsInFormulas
 
         Public CreateSharedAndArrayFormulasAction As Action(Of Workbook) = AddressOf CreateSharedAndArrayFormulas
+        Public CreateDynamicArrayFormulasAction As Action(Of Workbook) = AddressOf CreateDynamicArrayFormulas
 
 #End Region
         Private Sub UseConstantsAndCalculationOperatorsInFormulas(ByVal workbook As Workbook)
@@ -195,6 +196,22 @@ Namespace SpreadsheetExamples
                 worksheet.Cells("C13").GetArrayFormulaRange().ArrayFormula = String.Empty
                 worksheet.Range("C2:C11").ArrayFormula = af
             End If
+#End Region  ' #ArrayFormulas
+        End Sub
+        Private Sub CreateDynamicArrayFormulas(ByVal workbook As Workbook)
+#Region "#ArrayFormulas"
+            Dim worksheet As Worksheet = workbook.Worksheets(0)
+
+            worksheet.Range("A1").ColumnWidthInCharacters = 20
+            worksheet.Range("A1").Alignment.Horizontal = SpreadsheetHorizontalAlignment.Center
+            worksheet.Range("A1").FillColor = Color.LightGray
+
+            worksheet.Range("A1").Value = "Dynamic Array Formulas:"
+
+
+            ' Insert dynamic array formulas
+            worksheet("A2").DynamicArrayFormulaInvariant = "={""Red"",""Green"",""Orange"",""Blue""}"
+            worksheet.DynamicArrayFormulas.Add(worksheet("B1"), "=LEN(A2:D2)")
 #End Region  ' #ArrayFormulas
         End Sub
     End Module

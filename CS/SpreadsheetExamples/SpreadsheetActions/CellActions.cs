@@ -2,6 +2,9 @@
 using System.Drawing;
 using DevExpress.Spreadsheet;
 using System.Collections.Generic;
+using DevExpress.Pdf.Native.BouncyCastle.Asn1.BC;
+using System.IO;
+using System.IO.Ports;
 
 namespace SpreadsheetExamples {
     public static class CellActions {
@@ -11,6 +14,7 @@ namespace SpreadsheetExamples {
         public static Action<IWorkbook> SetValueFromTextAction = SetValueFromText;
         public static Action<Workbook> CreateNamedRangeAction = CreateNamedRange;
         public static Action<Workbook> AddHyperlinkAction = AddHyperlink;
+        public static Action<Workbook> PlaceImageInCellAction = PlaceImageInCell;
         public static Action<Workbook> CopyCellDataAndStyleAction = CopyCellDataAndStyle;
         public static Action<Workbook> MergeAndSplitCellsAction = MergeAndSplitCells;
         public static Action<Workbook> ClearCellsAction = ClearCells;
@@ -189,6 +193,29 @@ namespace SpreadsheetExamples {
             // Merge cells contained in the "A1:C5" range.
             worksheet.MergeCells(worksheet.Range["A1:C5"]);
             #endregion #MergeCells
+        }
+
+        static void PlaceImageInCell(Workbook workbook)
+        {
+            #region #PlaceImageInCell
+            Worksheet worksheet = workbook.Worksheets.ActiveWorksheet;
+
+            byte[] imageBytes = File.ReadAllBytes(@"Documents\x-docserver.png");
+            MemoryStream imageStream = new MemoryStream(imageBytes);
+
+            worksheet.Cells["A2"].ColumnWidthInCharacters = 20;
+            // Insert cell images from a stream
+            worksheet.Cells["A2"].Value = imageStream;
+
+            // Specify image information
+            if (worksheet.Cells["A2"].Value.IsCellImage)
+            {
+                worksheet.Cells["A2"].ImageInfo.Decorative = true;
+                worksheet.Cells["A2"].ImageInfo.AlternativeText = "Image AltText";
+            }
+            #endregion #PlaceImageInCell
+
+
         }
 
         static void ClearCells(Workbook workbook) {
