@@ -122,15 +122,15 @@ Namespace SpreadsheetExamples
 #Region "#LoadDocumentFromFile"
             ' Load a workbook from the file.
             workbook.LoadDocument("Documents\Document.xlsx", DocumentFormat.OpenXml)
-#End Region  ' #LoadDocumentFromFile
+#End Region
         End Sub
 
         Private Sub SaveDocumentToFile()
 #Region "#SaveDocumentToFile"
             ' Save the modified document to the file.
             workbook.SaveDocument("Documents\SavedDocument.xlsx", DocumentFormat.OpenXml)
-#End Region  ' #SaveDocumentToFile
-            Call Process.Start("Documents\SavedDocument.xlsx")
+#End Region
+            Call Process.Start(New ProcessStartInfo("Documents\SavedDocument.xlsx") With {.UseShellExecute = True})
         End Sub
     End Class
 End Namespace

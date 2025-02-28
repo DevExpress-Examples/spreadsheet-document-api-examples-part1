@@ -139,7 +139,7 @@ namespace SpreadsheetExamples {
             // Save the modified document to the file.
             workbook.SaveDocument("Documents\\SavedDocument.xlsx", DocumentFormat.OpenXml);
             #endregion #SaveDocumentToFile
-            Process.Start("Documents\\SavedDocument.xlsx");
+            Process.Start(new ProcessStartInfo("Documents\\SavedDocument.xlsx") { UseShellExecute = true });
         }
     }
 }
