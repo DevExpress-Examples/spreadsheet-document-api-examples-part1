@@ -58,6 +58,8 @@ Namespace SpreadsheetExamples
             examples(1).Groups.Add(New SpreadsheetExample("Show or Hide a Row/Column", ShowHideRowsColumnsAction))
             examples(1).Groups.Add(New SpreadsheetExample("Row Height and Column Width", SpecifyRowsHeightColumnsWidthAction))
             examples(1).Groups.Add(New SpreadsheetExample("Group Rows/Columns", GroupRowsColumnsAction))
+            examples(1).Groups.Add(New SpreadsheetExample("Delete Rows Based on Condition", DeleteRowsBasedOnConditionAction))
+            examples(1).Groups.Add(New SpreadsheetExample("Delete Columns Based on Condition", DeleteColumnsBasedOnConditionAction))
             ' Add nodes to the "Cells" group of examples.
             examples(2).Groups.Add(New SpreadsheetExample("Cell Value", ChangeCellValueAction))
             examples(2).Groups.Add(New SpreadsheetExample("Cell Value From Text", SetValueFromTextAction))
@@ -69,7 +71,7 @@ Namespace SpreadsheetExamples
             examples(2).Groups.Add(New SpreadsheetExample("Clear Cells", ClearCellsAction))
             ' Add nodes to the "Formulas" group of examples. 
             examples(3).Groups.Add(New SpreadsheetExample("Constants and Calculation Operators in Formulas", UseConstantsAndCalculationOperatorsInFormulasAction))
-            examples(3).Groups.Add(New SpreadsheetExample("R1C1 References in Formulas", R1C1ReferencesInFormulassAction))
+            examples(3).Groups.Add(New SpreadsheetExample("R1C1 References in Formulas", R1C1ReferencesInFormulasAction))
             examples(3).Groups.Add(New SpreadsheetExample("Names in Formulas", UseNamesInFormulasAction))
             examples(3).Groups.Add(New SpreadsheetExample("Create Named Formulas", CreateNamedFormulasAction))
             examples(3).Groups.Add(New SpreadsheetExample("Functions in Formulas", UseFunctionsInFormulasAction))

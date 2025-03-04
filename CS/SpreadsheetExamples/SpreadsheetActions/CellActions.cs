@@ -10,7 +10,7 @@ namespace SpreadsheetExamples {
 
         #region Actions
         public static Action<Workbook> ChangeCellValueAction = ChangeCellValue;
-        public static Action<IWorkbook> SetValueFromTextAction = SetValueFromText;
+        public static Action<Workbook> SetValueFromTextAction = SetValueFromText;
         public static Action<Workbook> CreateNamedRangeAction = CreateNamedRange;
         public static Action<Workbook> AddHyperlinkAction = AddHyperlink;
         public static Action<Workbook> PlaceImageInCellAction = PlaceImageInCell;
@@ -52,7 +52,7 @@ namespace SpreadsheetExamples {
             #endregion #CellValue
         }
 
-        static void SetValueFromText(IWorkbook workbook) {
+        static void SetValueFromText(Workbook workbook) {
             workbook.BeginUpdate();
             try {
                 Worksheet worksheet = workbook.Worksheets[0];

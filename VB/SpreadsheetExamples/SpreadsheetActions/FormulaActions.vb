@@ -9,7 +9,7 @@ Namespace SpreadsheetExamples
 #Region "Actions"
         Public UseConstantsAndCalculationOperatorsInFormulasAction As Action(Of Workbook) = AddressOf UseConstantsAndCalculationOperatorsInFormulas
 
-        Public R1C1ReferencesInFormulassAction As Action(Of Workbook) = AddressOf R1C1ReferencesInFormulas
+        Public R1C1ReferencesInFormulasAction As Action(Of Workbook) = AddressOf R1C1ReferencesInFormulas
 
         Public UseNamesInFormulasAction As Action(Of Workbook) = AddressOf UseNamesInFormulas
 

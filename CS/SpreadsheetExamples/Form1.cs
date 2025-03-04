@@ -58,6 +58,8 @@ namespace SpreadsheetExamples {
             examples[1].Groups.Add(new SpreadsheetExample("Show or Hide a Row/Column", RowAndColumnActions.ShowHideRowsColumnsAction));
             examples[1].Groups.Add(new SpreadsheetExample("Row Height and Column Width", RowAndColumnActions.SpecifyRowsHeightColumnsWidthAction));
             examples[1].Groups.Add(new SpreadsheetExample("Group Rows/Columns", RowAndColumnActions.GroupRowsColumnsAction));
+            examples[1].Groups.Add(new SpreadsheetExample("Delete Rows Based On Condition", RowAndColumnActions.DeleteRowsBasedOnConditionAction));
+            examples[1].Groups.Add(new SpreadsheetExample("Delete Columns Based On Condition", RowAndColumnActions.DeleteColumnsBasedOnConditionAction));
 
             // Add nodes to the "Cells" group of examples.
             examples[2].Groups.Add(new SpreadsheetExample("Cell Value", CellActions.ChangeCellValueAction));
